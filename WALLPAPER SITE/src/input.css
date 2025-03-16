@@ -1,7 +1,1 @@
-@font-face {
-    font-family: 'Playwrite';
-    src: url('/p2/src/Playwrite_HR_Lijeva/PlaywriteHRLijeva-VariableFont_wght.ttf') format('truetype');
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
