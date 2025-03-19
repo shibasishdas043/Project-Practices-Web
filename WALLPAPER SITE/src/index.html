@@ -16,7 +16,7 @@
     <header><!-- HEADER SECTION --->
     
         <div
-            class="navbar border-b-2 border-pink-900 p-2 flex justify-between items-center bg-gradient-to-r from-cyan-950 via-cyan-600 to-cyan-950 shadow-lg">
+            class="navbar border-b-2 border-pink-900 p-0.5 flex justify-between items-center bg-gradient-to-r from-cyan-950 via-cyan-600 to-cyan-950 shadow-lg">
             <!--- MAIN CONTAINER DIV -->
     
             <div 
@@ -27,20 +27,20 @@
                 </a>
             </div>
     
-            <div class="nav-links flex gap-1"><!--Nav Links-->
+            <div class="nav-links p-0.5 m-0.5 flex justify-evenly items-center"><!--Nav Links-->
     
-                <a class="px-4 py-1.5 rounded-md hover:bg-cyan-600/40 hover:cursor-pointer text-center text-zinc-50 transition-all duration-800 hover:scale-105 hover:shadow-md"
-                    href="#home"><!--HOME Nav Bar Link-->
+                <a class="px-4 py-1.5 m-1 rounded-md hover:bg-blue-400 text-center text-white font font-semibold transition delay-100 duration-700 hover:scale-105 hover:shadow-md hover:text-black"
+                    href="#home">
                     Home
                 </a><!--HOME Nav Bar Link-->
     
                 <div class="relative group"><!--CATAGORY Nav Bar Link-->
                     <button
-                        class="px-4 py-1.5 rounded-md hover:bg-cyan-600/40 hover:cursor-pointer text-center text-zinc-50 transition-all duration-800 hover:scale-105 hover:shadow-md focus:outline-none ">
+                        class="px-4 py-1.5 rounded-md hover:bg-blue-400 hover:cursor-pointer text-center text-white font-semibold transition delay-100 duration-700 hover:scale-105 hover:shadow-md focus:outline-none hover:text-black">
                         Category
                     </button>
                     <div
-                        class="absolute grid grid-rows-4 mt-2 group-focus-within:block hidden bg-cyan-800/95 text-zinc-50 rounded-lg shadow-lg ">
+                        class="border-2 border-pink-900 absolute grid grid-rows-4 mt-5 group-focus-within:block hidden bg-white text-black rounded-lg shadow-lg ">
                         <a class="block px-4 py-2 hover:bg-cyan-600/40 hover:cursor-pointer transition-all duration-500"
                             href="#nature">
                             Nature
@@ -80,21 +80,22 @@
                     </div>
                 </div>
     
-                <a class="px-4 py-1.5 rounded-md hover:bg-cyan-600/40 hover:cursor-pointer text-center text-zinc-50 transition-all duration-800 hover:scale-105 hover:shadow-md"
+                <a class="px-4 py-1.5 m-1 rounded-md hover:bg-blue-400 text-center text-white font-semibold hover:text-black transition delay-100 duration-700 hover:scale-105 hover:shadow-md"
                     href="./about.html">
                     About
-                </a>
+                </a><!-- ABOUT PAGE LINK -->
     
-            </div><!--Nav Links-->
+            </div><!-- END OF NAV LINKS -->
     
-            <div class="search-bar flex items-center space-x-2">
+            <div class="search-bar flex justify-evenly items-center space-x-2">
                 <label class="sr-only" for="search-input">
                     Search
                 </label>
-                <div class="relative flex items-center">
-                    <input
-                        class="w-40 sm:w-60 border-none rounded-lg bg-cyan-400/20 hover:bg-blue-400 hover:text-yellow-100 focus:bg-slate-50 focus:text-black hover:cursor-pointer hover:scale-105 text-white focus:outline-1px focus:outline-cyan-600 focus:placeholder-transparent placeholder-white transition-all duration-800 px-4 py-1.5 focus:shadow-md"
+                
+                <div class="flex justify-evenly items-center">
+                    <input class="w-40 sm:w-60 border-none rounded-lg bg-cyan-400/20 hover:bg-blue-400 hover:text-yellow-100 focus:bg-slate-50 focus:text-black hover:cursor-pointer hover:scale-105 text-white focus:outline-1px focus:outline-cyan-600 focus:placeholder-transparent placeholder-white transition-all duration-800 px-4 py-1.5 focus:shadow-md"
                         id="search-input" placeholder="Search..." type="text" />
+
                     <button
                         class="rounded-lg hover:cursor-pointer bg-cyan-400/20 px-4 py-1.5 text-white hover:bg-blue-500 transition-all duration-800 hover:scale-105 hover:shadow-md flex items-center ml-2">
                         <i class="fas fa-search text-sm">
@@ -102,14 +103,17 @@
                         <span class="text-sm font-medium">
                             Search
                         </span>
-                    </button>
+                    </button><!-- SEARCH BUTTON-->
+
                     <div class="absolute top-full left-0 bg-cyan-800/95 text-zinc-50 w-full mt-2 rounded-lg shadow-xl hidden backdrop-blur-sm border border-cyan-500/20"
-                        id="suggestions">
+                        id="suggestions"><!-- SUGGETIONS -->
                     </div>
+
                     <div class="absolute right-20 top-1/2 -translate-y-1/2 hidden text-zinc-50" id="loading">
                         <i class="fas fa-spinner fa-spin">
                         </i>
-                    </div>
+                    </div><!--LOADING ANIMATION -->
+
                 </div>
             </div>
     
