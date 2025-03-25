@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Weather Visualization</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet-control-panel@1.0.0/src/Control.Panel.css"
+    />
+    <style>
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .weather-icon {
+        width: 24px;
+        height: 24px;
+      }
+      .leaflet-control-panel {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+      }
+      .time-slider {
+        width: 300px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://cdn.jsdelivr.net/npm/webgl-wind/dist/webgl-wind.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf/turf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <!-- Weather Controls -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-control-panel@1.0.0/src/Control.Panel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-velocity@2.0.5/dist/leaflet-velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script>
+      let map;
+      let activeLayers = {};
+      const API_KEY = "YOUR_OPENWEATHER_API_KEY"; // Get from https://openweathermap.org/api
+
+      // Map initialization
+      function initMap() {
+        map = L.map("map").setView([20, 0], 3);
+
+        // Base layers
+        const baseLayers = {
+          OpenStreetMap: L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+              attribution: "© OpenStreetMap contributors",
+            }
+          ),
+          Satellite: L.tileLayer(
+            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+          ),
+        };
+
+        // Control Panel
+        const panel = L.control
+          .panel({
+            position: "topright",
+            title: "Weather Controls",
+            collapsed: false,
+          })
+          .addTo(map);
+
+        panel.addContent(
+          `<div>
+                    <h4>Weather Layers</h4>
+                    <select id="layerSelector">
+                        <option value="wind">Wind</option>
+                        <option value="temp">Temperature</option>
+                        <option value="pressure">Pressure</option>
+                        <option value="precipitation">Precipitation</option>
+                    </select>
+                    <button onclick="toggleLayer()">Toggle Layer</button>
+                    
+                    <h4>Time Control</h4>
+                    <input type="range" id="timeSlider" class="time-slider" min="0" max="24" value="12">
+                    <span id="timeDisplay">12:00</span>
+                </div>`
+        );
+
+        baseLayers.OpenStreetMap.addTo(map);
+        setupEventListeners();
+      }
+
+      // Weather Layer Management
+      async function toggleLayer() {
+        const layerType = document.getElementById("layerSelector").value;
+
+        if (activeLayers[layerType]) {
+          map.removeLayer(activeLayers[layerType]);
+          delete activeLayers[layerType];
+        } else {
+          switch (layerType) {
+            case "wind":
+              activeLayers.wind = await createWindLayer();
+              break;
+            case "temp":
+              activeLayers.temp = await createTempLayer();
+              break;
+            case "pressure":
+              activeLayers.pressure = await createPressureLayer();
+              break;
+            case "precipitation":
+              activeLayers.precipitation = await createPrecipitationLayer();
+              break;
+          }
+          activeLayers[layerType].addTo(map);
+        }
+      }
+
+      // Wind Layer
+      async function createWindLayer() {
+        const windData = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${API_KEY}`
+        ).then((response) => response.json());
+
+        return L.velocityLayer({
+          displayValues: true,
+          data: processWindData(windData),
+          minVelocity: 0,
+          maxVelocity: 25,
+          velocityScale: 0.005,
+          particleAge: 90,
+        });
+      }
+
+      // Temperature Layer
+      async function createTempLayer() {
+        const tempData = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${API_KEY}`
+        ).then((response) => response.json());
+
+        return L.heatLayer(processTempData(tempData), {
+          radius: 25,
+          blur: 15,
+          gradient: {
+            0.4: "blue",
+            0.6: "lime",
+            0.8: "yellow",
+            1.0: "red",
+          },
+        });
+      }
+
+      // Data Processing Functions
+      function processWindData(data) {
+        // Convert OpenWeatherMap data to velocity format
+        return {
+          header: {},
+          data: [
+            // This should be replaced with actual grid data processing
+            { header: { nx: 100, ny: 100 }, data: [] },
+          ],
+        };
+      }
+
+      function processTempData(data) {
+        // Process temperature data for heatmap
+        return data.list.map((item) => [
+          item.coord.lat,
+          item.coord.lon,
+          item.main.temp - 273.15, // Convert Kelvin to Celsius
+        ]);
+      }
+
+      // Time Control
+      function setupEventListeners() {
+        document.getElementById("timeSlider").addEventListener("input", (e) => {
+          const hours = e.target.value.padStart(2, "0");
+          document.getElementById("timeDisplay").textContent = `${hours}:00`;
+          // Here you would update layers with time-specific data
+        });
+      }
+
+      // Initialize the application
+      initMap();
+    </script>
+  </body>
+</html>
