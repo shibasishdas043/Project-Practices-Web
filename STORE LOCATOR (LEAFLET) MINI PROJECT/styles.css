@@ -9,3 +9,18 @@
 body {
     font-family: "PT Sans", sans-serif;
 }
+
+.screen-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+}
+
+.store-list {
+    width: 20rem;
+}
+
+#map {
+    width: 100vh;
+}
