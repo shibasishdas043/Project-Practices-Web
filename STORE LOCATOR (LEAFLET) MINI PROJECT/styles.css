@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+body {
+    font-family: "PT Sans", sans-serif;
+}
