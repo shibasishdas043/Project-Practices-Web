@@ -35,7 +35,7 @@ polygon.addTo(map);
 
 
 // create a red polyline from an array of LatLng points
-var coOrdinates = [
+let coOrdinates = [
     [45.51, -122.68],
     [37.77, -122.43],
     [34.04, -118.2]
@@ -44,5 +44,13 @@ const polyline = L.polyline(coOrdinates, {color: 'red'});
 polyline.addTo(map);
 
 
-const circleMarker = L.circleMarker([18.920675417289807, 72.82952788802635], {radius:50});
+const circleMarker = L.circleMarker([18.920675417289807, 72.82952788802635], {radius:40});
 circleMarker.addTo(map);
+
+
+const icon = L.icon({
+    iconUrl: "flag.png",
+    iconSIze: [200, 100],
+});
+
+L.marker([50.920675417289807, 72.82952788802635], {icon: icon}).bindPopup("<h2>Hello</h2>").addTo(map);
