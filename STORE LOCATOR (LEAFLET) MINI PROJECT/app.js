@@ -24,3 +24,17 @@ function renderList(){
     });
 }
 renderList();
+
+
+function onEachFeature(){
+
+}
+
+
+const shopsLayer = L.geoJSON(storeList, {
+    onEachFeature: onEachFeature,
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng);
+    }
+});
+shopsLayer.addTo(renderMap);
