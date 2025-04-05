@@ -7,30 +7,28 @@
 
 body {
   font-family: "PT Sans", sans-serif;
-  height: 100vh;
 }
 
 .screen-div {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100%;
+  padding: 2rem;
 }
 
 .store-list {
+  height: 100%;
   width: 20%;
-  height: 100vh;
   overflow: auto;
   background: whitesmoke;
 }
 
 #right-side {
   width: 80%;
-  height: 100vh;
-  overflow: auto;
-  flex: content;
-  flex-direction: column;
+  height: 100%;
 }
 
 #map {
@@ -117,9 +115,14 @@ body {
   font-size: 14px;
 }
 
-#map-button #change-button {
+#map-button  {
   height: 2rem;
   width: 100%;
-  background-color: green;
 }
 
+#change-button {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  color: white;
+}
