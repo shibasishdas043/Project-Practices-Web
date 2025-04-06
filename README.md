@@ -1,2 +1,2 @@
 # Project-Practices-Web
-This Repository Containing My Project Practices And Works Of Web Applications .
+THIS REPOSITORY CONTAINS MY PROJECT PRACTICES AND WORKS OS WEB APPLICATIONS . . .
