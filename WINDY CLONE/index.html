@@ -55,13 +55,13 @@
         // Base layers
         const baseLayers = {
           OpenStreetMap: L.tileLayer(
-            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            "https://api.maptiler.com/maps/satellite/{z}/{x}/{y}@2x.jpg?key=ttb3xhwMPjIny8cZI1hO",
             {
               attribution: "© OpenStreetMap contributors",
             }
           ),
           Satellite: L.tileLayer(
-            "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            "https://api.maptiler.com/maps/satellite/{z}/{x}/{y}@2x.jpg?key=ttb3xhwMPjIny8cZI1hO"
           ),
         };
 
@@ -84,7 +84,7 @@
                         <option value="precipitation">Precipitation</option>
                     </select>
                     <button onclick="toggleLayer()">Toggle Layer</button>
-                    
+
                     <h4>Time Control</h4>
                     <input type="range" id="timeSlider" class="time-slider" min="0" max="24" value="12">
                     <span id="timeDisplay">12:00</span>
@@ -124,7 +124,7 @@
       // Wind Layer
       async function createWindLayer() {
         const windData = await fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${API_KEY}`
+          `https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${298b0a71c0881dde04168323716f68e6}`
         ).then((response) => response.json());
 
         return L.velocityLayer({
@@ -140,7 +140,7 @@
       // Temperature Layer
       async function createTempLayer() {
         const tempData = await fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${API_KEY}`
+          `https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${298b0a71c0881dde04168323716f68e6}`
         ).then((response) => response.json());
 
         return L.heatLayer(processTempData(tempData), {
