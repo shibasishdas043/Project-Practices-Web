@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+#screen {
+    background: #333333;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.social-media {
+    border: solid deepskyblue;
+    border-radius: 15px;
+    min-height: 21rem;
+    max-height: 42rem;
+    width: 31rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+#image {
+    border: solid deepskyblue;
+    border-radius: 15px;
+    min-height: 10rem;
+    max-height: 20rem;
+    width: 30rem;
+    margin: 0.5rem;
+}
+
+.buttons {
+    border: solid deepskyblue;
+    border-radius: 15px;
+    min-height: 5rem;
+    max-height: 20rem;
+    width: 30rem;
+    margin: 0.5rem;
+}
+
+#comment-render {
+    border: solid deepskyblue;
+    border-radius: 10px;
+    min-height: 5rem;
+    max-height: 20rem;
+    width: 30rem;
+    margin: 0.5rem;
+}
+
+#social-media-image {
+    border-radius: 15px;
+    min-height: 10rem;
+    max-height: 20rem;
+    width: 30rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#like-button {
+    border: none;
+    border-radius: 0.5rem;
+    align-items: center;
+    max-height: 2rem;
+    min-width: 6rem;
+}
