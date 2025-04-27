@@ -5,8 +5,9 @@ body {
 }
 
 #screen {
-    background: #333333;
+    /*background: #333333;*/
     height: 100vh;
+    background-color: #0d2636;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -15,7 +16,7 @@ body {
 }
 
 .social-media {
-    border: solid deepskyblue;
+    /*border: solid deepskyblue;*/
     border-radius: 15px;
     min-height: 21rem;
     max-height: 42rem;
@@ -25,33 +26,17 @@ body {
     flex-direction: column;
     align-items: center;
     color: white;
+    background-color: rgba(234, 232, 232, 0.87);
 }
 
 #image {
-    border: solid deepskyblue;
+    /*border: solid deepskyblue;*/
     border-radius: 15px;
     min-height: 10rem;
     max-height: 20rem;
     width: 30rem;
     margin: 0.5rem;
-}
 
-.buttons {
-    border: solid deepskyblue;
-    border-radius: 15px;
-    min-height: 5rem;
-    max-height: 20rem;
-    width: 30rem;
-    margin: 0.5rem;
-}
-
-#comment-render {
-    border: solid deepskyblue;
-    border-radius: 10px;
-    min-height: 5rem;
-    max-height: 20rem;
-    width: 30rem;
-    margin: 0.5rem;
 }
 
 #social-media-image {
@@ -62,15 +47,84 @@ body {
 }
 
 .buttons {
+    /*border: solid deepskyblue;*/
+    border-radius: 15px;
+    min-height: 5rem;
+    max-height: 20rem;
+    width: 30rem;
+    margin: 0.5rem;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 #like-button {
     border: none;
     border-radius: 0.5rem;
-    align-items: center;
-    max-height: 2rem;
-    min-width: 6rem;
+    /*align-items: center;*/
+    height: 2rem;
+    width: 6rem;
+    color: white;
+    background-color: dodgerblue;
+}
+
+#like-button:hover {
+    background-color: #0066FF;
+    /*color: white;*/
+}
+
+#comment-section {
+    border: none;
+    border-radius: 0.5rem;
+    /*align-items: center;*/
+    height: 2rem;
+    width: 12rem;
+    background-color: dodgerblue;
+    color: white;
+}
+
+#comment-section:hover {
+    background-color: #0066FF;
+    /*color: white;*/
+}
+
+#share-button {
+    border: none;
+    border-radius: 0.5rem;
+    /*align-items: center;*/
+    height: 2rem;
+    width: 6rem;
+    color: white;
+    background-color: dodgerblue;
+}
+
+#share-button:hover {
+    background-color: #0066FF;
+    /*color: white;*/
+}
+
+.comment-render {
+    border: solid dodgerblue;
+    border-radius: 10px;
+    min-height: 5rem;
+    max-height: 20rem;
+    width: 30rem;
+    margin: 0.5rem;
+}
+
+#remove-comment {
+    border: none;
+    border-radius: 0.5rem;
+    /*align-items: center;*/
+    height: 2rem;
+    width: 6rem;
+    color: white;
+    background-color: dodgerblue;
+}
+
+#remove-comment:hover {
+    background-color: #0066FF;
+    /*color: white;*/
 }
