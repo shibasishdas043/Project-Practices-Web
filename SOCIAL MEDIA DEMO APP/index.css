@@ -29,6 +29,10 @@ body {
     background-color: rgba(234, 232, 232, 0.87);
 }
 
+
+/*------------------------------------------------------------------*/
+
+
 #image {
     /*border: solid deepskyblue;*/
     border-radius: 15px;
@@ -46,6 +50,9 @@ body {
     width: 30rem;
 }
 
+/*------------------------------------------------------------------*/
+
+
 .buttons {
     /*border: solid deepskyblue;*/
     border-radius: 15px;
@@ -59,6 +66,10 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
+
+
+/*------------------------------------------------------------------*/
+
 
 #like-button {
     border: none;
@@ -82,29 +93,79 @@ body {
 
 #like-img {
     height: 26px;
-    align-items: center;
 }
 
+
+/*------------------------------------------------------------------*/
+
+
+/* Comment Button */
 #comment-section {
     border: none;
     border-radius: 0.5rem;
     /*align-items: center;*/
     height: 2.5rem;
-    width: 12rem;
+    width: 10rem;
     background-color: dodgerblue;
-    color: white;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+/* Comment Button Hover*/
 #comment-section:hover {
     background-color: #0066FF;
     /*color: white;*/
     transition: ease-in-out;
     transition-duration: 250ms;
 }
+
+/* Comment Image */
+#comment-img {
+    height: 26px;
+}
+
+/* Comment Input Section */
+#comment-input  {
+    border: none;
+    border-radius: 0.5rem;
+    /*align-items: center;*/
+    height: 2.5rem;
+    width: 18rem;
+    background-color: white;
+    color: black;
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+/* Comment Send Button */
+#comment-send-btn {
+    border: none;
+    border-radius: 0.5rem;
+    /*align-items: center;*/
+    height: 2.5rem;
+    width: 10rem;
+    background-color: dodgerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#comment-send-btn:hover {
+    background-color: #0066FF;
+    /*color: white;*/
+    transition: ease-in-out;
+    transition-duration: 250ms;
+}
+
+#comment-send-img {
+    height: 26px;
+}
+
+
+/*------------------------------------------------------------------*/
 
 
 #share-button {
@@ -130,6 +191,10 @@ body {
 #share-img {
     height: 26px;
 }
+
+
+/*------------------------------------------------------------------*/
+
 
 
 /* Comment Render Section */
