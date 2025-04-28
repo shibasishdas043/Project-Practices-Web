@@ -64,47 +64,75 @@ body {
     border: none;
     border-radius: 0.5rem;
     /*align-items: center;*/
-    height: 2rem;
+    height: 2.5rem;
     width: 6rem;
     color: white;
     background-color: dodgerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #like-button:hover {
     background-color: #0066FF;
     /*color: white;*/
+    transition: ease-in-out;
+    transition-duration: 250ms;
+}
+
+#like-img {
+    height: 26px;
+    align-items: center;
 }
 
 #comment-section {
     border: none;
     border-radius: 0.5rem;
     /*align-items: center;*/
-    height: 2rem;
+    height: 2.5rem;
     width: 12rem;
     background-color: dodgerblue;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #comment-section:hover {
     background-color: #0066FF;
     /*color: white;*/
+    transition: ease-in-out;
+    transition-duration: 250ms;
 }
+
 
 #share-button {
     border: none;
     border-radius: 0.5rem;
     /*align-items: center;*/
-    height: 2rem;
+    height: 2.5rem;
     width: 6rem;
     color: white;
     background-color: dodgerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #share-button:hover {
     background-color: #0066FF;
     /*color: white;*/
+    transition: ease-in-out;
+    transition-duration: 250ms;
 }
 
+#share-img {
+    height: 26px;
+}
+
+
+/* Comment Render Section */
 .comment-render {
     border: solid dodgerblue;
     border-radius: 10px;
@@ -114,17 +142,21 @@ body {
     margin: 0.5rem;
 }
 
+/* Remove Comment Button */
 #remove-comment {
     border: none;
     border-radius: 0.5rem;
     /*align-items: center;*/
-    height: 2rem;
+    height: 2.5rem;
     width: 6rem;
     color: white;
     background-color: dodgerblue;
 }
 
+/* remove Comment Button*/
 #remove-comment:hover {
     background-color: #0066FF;
     /*color: white;*/
+    transition: ease-in-out;
+    transition-duration: 250ms;
 }

@@ -1,33 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Social Media App</title>
-    <link rel="stylesheet" href="./index.css">
-</head>
-<body>
-
-<div id="screen">
-
-    <div class="social-media">
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="screen">
+      <div class="social-media">
         <div id="image">
-            <img id="social-media-image" src="./image.jpg" alt="image.jpg">
+          <img id="social-media-image" src="./image.jpg" alt="image.jpg" />
         </div>
 
         <div class="buttons">
-            <button id="like-button">like</button>
-            <input type="submit" id="comment-section">
-            <button id="share-button">share</button>
+          <button id="like-button">
+            <img id="like-img" src="./like-good-svgrepo-com.svg" alt="" />
+          </button>
+
+
+
+
+
+
+
+
+          <form id="comment-section">
+            <input type="text" id="comment" name="comment" placeholder="comment" />
+            <button type="submit">Submit</button>
+          </form>
+
+
+
+
+
+
+
+
+          <button id="share-button">
+            <img id="share-img" src="./share-svgrepo-com.svg" alt="share" />
+          </button>
         </div>
 
-<!--        <div class="comment-render">-->
-<!--            <div class="comment"></div>-->
-<!--        </div>-->
+        <!--        <div class="comment-render">-->
+        <!--            <div class="comment"></div>-->
+        <!--        </div>-->
+      </div>
     </div>
-
-</div>
-<script src="./app.js"></script>
-</body>
+    <script src="./app.js"></script>
+  </body>
 </html>
