@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     background: none;
-}
-
+}        
+         
 #screen {
     /*background: #333333;*/
     height: 100vh;
@@ -101,19 +101,7 @@ body {
 .dropdown-comment-container {
     position: relative;
     display: inline-block;
-}
-
-.comment-section-form {
-    display: none; /* Hidden by default */
-    position: absolute;
-    background-color: white;
-    min-width: 20rem;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    
+    justify-items: center;
 }
 
 /* Comment Button */
@@ -142,6 +130,33 @@ body {
     height: 26px;
 }
 
+.comment-section-form {
+    display: none; 
+    position: absolute;
+    background-color: white;
+    width: 26rem;
+    padding: 4px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+form {
+    width: 26rem;
+    display: flex;
+    border-radius: 0.5rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 4px;
+}
+
 /* Comment Input Section */
 #comment-input  {
     border: none;
@@ -149,13 +164,20 @@ body {
     outline: none;
     /*align-items: center;*/
     height: 2.5rem;
-    width: 18rem;
+    width: 22rem;
+    /* margin-right: 4px; */
     background-color: rgba(234, 232, 232, 0.87);
     color: black;
+    text-align: center;
     /* display: flex; */
     /* flex-direction: column;
     justify-content: center;
     align-items: center; */
+}
+
+#comment-input:hover {
+    outline-style: dotted;
+    outline-color: #0066FF;
 }
 
 /* Comment Send Button */
@@ -165,6 +187,7 @@ body {
     /*align-items: center;*/
     height: 2.5rem;
     width: 3rem;
+    /* margin-left: 4px; */
     background-color: dodgerblue;
     display: flex;
     justify-content: center;
