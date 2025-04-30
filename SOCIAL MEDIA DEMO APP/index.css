@@ -110,17 +110,20 @@ body {
 
 .comment-section-form {
   margin-top: 0.5rem;
-  display: none;
+  /* display: none; */
   background-color: white;
   height: 4rem;
   width: 480px;
   padding: 4px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  z-index: 1;
   border-radius: 0.5rem;
   width: fit-content;
   align-content: center;
+}
+
+.hidden {
+  display: none;
 }
 
 form {
