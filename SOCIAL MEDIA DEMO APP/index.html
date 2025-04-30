@@ -12,67 +12,79 @@
   </head>
   <body>
     <div id="screen">
-
       <div class="social-media">
-
         <div id="image">
           <img id="social-media-image" src="./image.jpg" alt="image.jpg" />
         </div>
 
         <div class="buttons">
-
+          
           <button id="like-button">
             <img id="like-img" src="./like-good-svgrepo-com.svg" alt="" />
           </button>
 
+          <!-- <div class="dropdown-comment-container"> -->
+            <button id="comment-section" onclick="toggleDropdown()">
+              <img
+                id="comment-img"
+                src="./comment-one-svgrepo-com.svg"
+                alt=""
+              />
+            </button>
 
-
-
-          <div class="dropdown-comment-container">
-            
-            <button id="comment-section" onclick="toggleDropdown()"><img id="comment-img" src="./comment-one-svgrepo-com.svg" alt=""></button>
-
-            <div id="myDropdown" class="comment-section-form">
+            <!-- <div id="myDropdown" class="comment-section-form">
               <form>
-                <input type="text" id="comment-input" name="comment" placeholder="comment" />
+                <input
+                  type="text"
+                  id="comment-input"
+                  name="comment"
+                  placeholder="comment"
+                />
                 <button id="comment-send-btn" type="submit">
-                    <img id="comment-send-btn-img" src="./send-2-svgrepo-com.svg" alt="comment-send">
+                  <img
+                    id="comment-send-btn-img"
+                    src="./send-2-svgrepo-com.svg"
+                    alt="comment-send"
+                  />
                 </button>
               </form>
-            </div>
-
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
+            </div> -->
+          <!-- </div> -->
 
           <button id="share-button">
             <img id="share-img" src="./share-svgrepo-com.svg" alt="share" />
           </button>
+        </div>
 
+        <div id="myDropdown" class="comment-section-form">
+          <form>
+            <input
+              type="text"
+              id="comment-input"
+              name="comment"
+              placeholder="comment"
+            />
+            <button id="comment-send-btn" type="submit">
+              <img
+                id="comment-send-btn-img"
+                src="./send-2-svgrepo-com.svg"
+                alt="comment-send"
+              />
+            </button>
+          </form>
         </div>
 
         <!--        <div class="comment-render">-->
         <!--            <div class="comment"></div>-->
         <!--        </div>-->
       </div>
-
     </div>
     <script>
-        function toggleDropdown() {
+      function toggleDropdown() {
         const dropdown = document.getElementById("myDropdown");
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
       }
-
     </script>
   </body>
 </html>
