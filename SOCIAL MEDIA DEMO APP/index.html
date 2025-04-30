@@ -1,82 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Social Media App</title>
-    <link rel="stylesheet" href="./index.css" />
-  </head>
-  <body>
-    <div id="screen">
-      <div class="social-media">
-        <div id="image">
-          <img
-            id="social-media-image"
-            src="./icons_img/image.jpg"
-            alt="image.jpg"
-          />
-        </div>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Social Media App</title>
+      <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+      <div id="screen">
+        <div class="social-media">
+          <!--------------------------------------->
 
-        <div class="buttons">
-          <button id="like-button">
+          <div id="image">
             <img
-              id="like-img"
-              src="./icons_img/like-good-svgrepo-com.svg"
-              alt=""
+              id="social-media-image"
+              src="./icons_img/image.jpg"
+              alt="image.jpg"
             />
-          </button>
+          </div>
 
-          <!-- <div class="dropdown-comment-container"> -->
-          <button id="comment-section" onclick="toggleDropdown()">
-            <img
-              id="comment-img"
-              src="./icons_img/comment-one-svgrepo-com.svg"
-              alt=""
-            />
-          </button>
+          <!--------------------------------------->
 
-          <button id="share-button">
-            <img
-              id="share-img"
-              src="./icons_img/share-svgrepo-com.svg"
-              alt="share"
-            />
-          </button>
-        </div>
-
-        <div id="myDropdown" class="comment-section-form hidden">
-          <form>
-            <input
-              type="text"
-              id="comment-input"
-              name="comment"
-              placeholder="comment"
-            />
-            <button id="comment-send-btn" type="submit">
+          <div class="buttons">
+            <button id="like-button">
               <img
-                id="comment-send-btn-img"
-                src="./icons_img/send-2-svgrepo-com.svg"
-                alt="comment-send"
+                id="like-img"
+                src="./icons_img/like-good-svgrepo-com.svg"
+                alt=""
               />
             </button>
-          </form>
-        </div>
 
-        <!--        <div class="comment-render">-->
-        <!--            <div class="comment"></div>-->
-        <!--        </div>-->
+            <!--------------------------------------->
+
+            <button id="comment-section">
+              <img
+                id="comment-img"
+                src="./icons_img/comment-one-svgrepo-com.svg"
+                alt=""
+              />
+            </button>
+
+            <!--------------------------------------->
+
+            <button id="share-button">
+              <img
+                id="share-img"
+                src="./icons_img/share-svgrepo-com.svg"
+                alt="share"
+              />
+            </button>
+          </div>
+
+          <!--------------------------------------->
+
+          <div id="comment-section-form" class="mydrop hidden">
+            <form>
+              <input
+                type="text"
+                id="comment-input"
+                name="comment"
+                placeholder="comment"
+              />
+              <button id="comment-send-btn" type="submit">
+                <img
+                  id="comment-send-btn-img"
+                  src="./icons_img/send-2-svgrepo-com.svg"
+                  alt="comment-send"
+                />
+              </button>
+            </form>
+          </div>
+
+          <!-- <div class="comment-render">
+                    <p class="comments"></p>
+                          <button id="remove-comment">
+                            <img src="" id="remove-btn-image" alt="remove-btn-image">
+                          </button>
+                </div> -->
+        </div>
       </div>
-    </div>
-    <script>
-      function toggleDropdown() {
-        const dropdown = document.getElementById("myDropdown");
-        dropdown.style.display =
-          dropdown.style.display === "block" ? "none" : "block";
-      }
-    </script>
-  </body>
-</html>
+
+      <script src="./like.js"></script>
+      <script src="./comment.js"></script>
+    </body>
+  </html>

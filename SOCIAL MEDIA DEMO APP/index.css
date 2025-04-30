@@ -76,6 +76,7 @@ body {
   background-color: #0066ff;
   transition: ease-in-out;
   transition-duration: 250ms;
+  cursor: pointer;
 }
 
 #like-img {
@@ -101,6 +102,7 @@ body {
   background-color: #0066ff;
   transition: ease-in-out;
   transition-duration: 250ms;
+  cursor: pointer;
 }
 
 /* Comment Button Image */
@@ -108,9 +110,8 @@ body {
   height: 26px;
 }
 
-.comment-section-form {
+#comment-section-form {
   margin-top: 0.5rem;
-  /* display: none; */
   background-color: white;
   height: 4rem;
   width: 480px;
@@ -170,6 +171,7 @@ form {
   background-color: #0066ff;
   transition: ease-in-out;
   transition-duration: 250ms;
+  cursor: pointer;
 }
 
 #comment-send-btn-img {
@@ -194,6 +196,7 @@ form {
   background-color: #0066ff;
   transition: ease-in-out;
   transition-duration: 250ms;
+  cursor: pointer;
 }
 
 #share-img {
@@ -203,28 +206,49 @@ form {
 /*------------------------------------------------------------------*/
 
 /* Comment Render Section */
-.comment-render {
-  border: solid dodgerblue;
-  border-radius: 10px;
-  min-height: 5rem;
-  max-height: 20rem;
-  width: 30rem;
-  margin: 0.5rem;
+.comments-render {
+  margin-top: 0.5rem;
+  background-color: white;
+  height: 4rem;
+  width: 480px;
+  padding: 4px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border-radius: 0.5rem;
+  width: fit-content;
+  align-content: center;
 }
+
+.comments {
+  /* border: none; */
+  /* border-radius: 0.5rem; */
+  /* outline: none; */
+  height: 2.5rem;
+  width: 400px;
+  background-color: rgba(234, 232, 232, 0.87);
+  color: black;
+  text-align: center;
+} 
 
 /* Remove Comment Button */
 #remove-comment {
   border: none;
   border-radius: 0.5rem;
   height: 2.5rem;
-  width: 6rem;
-  color: white;
-  background-color: dodgerblue;
+  width: 3rem;
+  background-color: rgb(205, 51, 51);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* remove Comment Button*/
 #remove-comment:hover {
-  background-color: #0066ff;
+  background-color: rgb(65, 10, 10);
   transition: ease-in-out;
   transition-duration: 250ms;
+}
+
+#remove-comment-img {
+  height: 24px;
 }
