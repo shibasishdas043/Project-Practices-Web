@@ -53,7 +53,7 @@ commentSendButton.addEventListener("click", (event) => {
 
   renderComments.appendChild(extractedComment);
   renderComments.appendChild(commentRemoveButton);
-  commentButton.appendChild(removeCommentImage);
+  commentRemoveButton.appendChild(removeCommentImage);
   socialMedia.appendChild(renderComments);
-  // commentSectionForm.classList.remove("hidden");
+  commentSectionForm.classList.add("hidden");
 });
