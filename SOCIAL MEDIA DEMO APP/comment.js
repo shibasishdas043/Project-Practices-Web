@@ -16,24 +16,44 @@ commentButton.addEventListener("click", () => {
   }
 });
 
-const renderComments = document.createElement("div");
-renderComments.classList.add("comments-render");
+// const renderComments = document.createElement("div");
+// renderComments.classList.add("comments-render");
 
-const extractedComment = document.createElement("p");
-extractedComment.classList.add("comments");
-renderComments.innerText = "hello";
+// const extractedComment = document.createElement("span");
+// extractedComment.classList.add("comments");
 
-const commentRemoveButton = document.createElement("button");
-commentRemoveButton.id = "remove-comment";
 
-console.log(renderComments);
+// const commentRemoveButton = document.createElement("button");
+// commentRemoveButton.id = "remove-comment";
+
+// console.log(renderComments);
 
 commentSendButton.addEventListener("click", (event) => {
-  // let comments = commentInput.value.trim();
-  // if(!comments) return;
-    event.preventDefault();
-    renderComments.appendChild(extractedComment);
-    renderComments.appendChild(commentRemoveButton);
-    socialMedia.appendChild(renderComments);
+  event.preventDefault();
+  
+  const comments = commentInput.value.trim();
+  if (!comments) return;
+
+  const renderComments = document.createElement("div");
+  renderComments.classList.add("comments-render");
+
+  const extractedComment = document.createElement("span");
+  extractedComment.classList.add("comments");
+
+  const commentRemoveButton = document.createElement("button");
+  commentRemoveButton.id = "remove-comment";
+
+  const removeCommentImage = document.createElement("img");
+  removeCommentImage.src = "./icons_img/removeBtn.svg";
+  removeCommentImage.alt = "Remove-Comment-Img"
+  removeCommentImage.id = "remove-comment-img";
+
+  extractedComment.innerText = comments;
+
+
+  renderComments.appendChild(extractedComment);
+  renderComments.appendChild(commentRemoveButton);
+  commentButton.appendChild(removeCommentImage);
+  socialMedia.appendChild(renderComments);
   // commentSectionForm.classList.remove("hidden");
 });

@@ -217,12 +217,21 @@ form {
   border-radius: 0.5rem;
   width: fit-content;
   align-content: center;
+
+  width: 466px;
+  display: flex;
+  border-radius: 0.5rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 4px;
 }
 
 .comments {
-  /* border: none; */
-  /* border-radius: 0.5rem; */
-  /* outline: none; */
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
   height: 2.5rem;
   width: 400px;
   background-color: rgba(234, 232, 232, 0.87);
@@ -236,17 +245,19 @@ form {
   border-radius: 0.5rem;
   height: 2.5rem;
   width: 3rem;
-  background-color: rgb(205, 51, 51);
+  background-color: dodgerblue;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(195, 56, 56);
 }
 
 /* remove Comment Button*/
 #remove-comment:hover {
-  background-color: rgb(65, 10, 10);
+  background-color: rgb(154, 35, 35);
   transition: ease-in-out;
   transition-duration: 250ms;
+  cursor: pointer;
 }
 
 #remove-comment-img {
