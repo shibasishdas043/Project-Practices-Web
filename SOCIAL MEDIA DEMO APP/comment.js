@@ -8,6 +8,10 @@ const commentInput = document.querySelector("#comment-input");
 
 const commentSendButton = document.querySelector("#comment-send-btn");
 
+const commentRemoveButton = document.querySelector("#remove-comment");
+
+// let commentHolderArray = [];
+
 commentButton.addEventListener("click", () => {
   // if (commentSectionForm.classList.contains("hidden")) {
   //   commentSectionForm.classList.remove("hidden");
@@ -63,6 +67,9 @@ function add_new_comment(comments) {
   renderComments.appendChild(commentRemoveButton);
   commentRemoveButton.appendChild(removeCommentImage);
   socialMedia.appendChild(renderComments);
+
+  // commentHolderArray.push(renderComments);
+
 }
 
 commentSendButton.addEventListener("click", (event) => {
@@ -74,9 +81,19 @@ commentSendButton.addEventListener("click", (event) => {
     commentSectionForm.classList.add("hidden");
     return;
   }
-  add_new_comment(comments);
+
+  add_new_comment(comments); // Function Call
 
   commentSectionForm.classList.add("hidden");
   
   commentInput.value = "";
 });
+
+
+// commentRemoveButton.addEventListener("click", (event) => {
+//   if(event.target.tagname === "BUTTON")
+
+// })
+
+
+
