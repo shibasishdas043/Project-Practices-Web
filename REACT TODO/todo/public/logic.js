@@ -1,5 +1,5 @@
-
 export function submitTodo(
+  ref,
   event,
   inputChangeHandle,
   setTodoText,
@@ -7,8 +7,13 @@ export function submitTodo(
   inputBoxValue
 ) {
   event.preventDefault();
+
   inputChangeHandle(event);
-  setTodoText([...todoText, inputBoxValue]);
+  if (inputBoxValue === "") {
+    ref.current.focus();
+  } else if (inputBoxValue !== "") {
+    setTodoText([...todoText, inputBoxValue]);
+  }
   console.log(todoText);
 }
 

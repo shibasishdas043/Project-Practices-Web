@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const FilterTodos = ({ filterTodo, todoText, setTodoText }) => {
   return (
@@ -16,4 +16,4 @@ const FilterTodos = ({ filterTodo, todoText, setTodoText }) => {
   );
 };
 
-export default FilterTodos
+export default FilterTodos;
