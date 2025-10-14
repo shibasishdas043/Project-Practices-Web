@@ -27,8 +27,14 @@ const App = () => {
     console.log("todo length : ", todoTextLength);
   }, [todoTextLength]);
 
+
+
   return (
-    <div className="bg-blue-950 text-white h-screen w-screen flex flex-col justify-center items-center suse-mono">
+    <div
+      className="text-white h-screen w-screen flex flex-col justify-center items-center suse-mono 
+     mx-auto backdrop-blur bg-black/20 rounded-2xl 
+    "
+    >
       <h1 className="text-6xl p-1 m-8">Todo List</h1>
 
       <InputBoxAndSubmitButton
@@ -38,8 +44,6 @@ const App = () => {
         setTodoText={setTodoText}
         todoText={todoText}
       />
-
-      
 
       {/* FilterTodos */}
       {todoText.length === 0 ? null : (
@@ -58,7 +62,7 @@ const App = () => {
       {/*todo border line */}
 
       {todoText.length === 0 ? null : (
-        <div className="border-[1px] p-2 m-2 rounded-2xl ">
+        <div className="border-0 p-2 m-2 rounded-2xl ">
           <ul className="flex flex-col">
             {todoText.map((todo, todoListindex) =>
               todo.length === 0 ? null : (
@@ -71,6 +75,8 @@ const App = () => {
                   setTodoText={setTodoText}
                   filterTodo={filterTodo}
                   fetchFilterIndex={fetchFilterIndex}
+                  inputBoxValue={inputCheckBox}
+                  setInputCheckBox={setInputCheckBox}
                 />
               )
             )}
