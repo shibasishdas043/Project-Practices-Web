@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 
 const TodoItem = ({
@@ -7,6 +8,7 @@ const TodoItem = ({
   todoText,
   setTodoText,
   filterTodo,
+  fetchFilterIndex,
 }) => {
   return (
     <>
@@ -17,7 +19,13 @@ const TodoItem = ({
         <input
           type="checkbox"
           className="rounded-2xl border-0 outline-0"
-          onChange={() => filterTodo(todoListindex)}
+          // onChange={(event) => event.target.checked && fetchFilterIndex(todoListindex)}
+          // onChange={(event) =>
+          //   event.target.checked && fetchFilterIndex(todoListindex)
+          // }
+          // onChange={(event) =>
+          //   event.target.checked && filterTodo(todoListindex)
+          // }
         />
         <div className="outline-0 border-[1px] p-2 m-2 rounded-2xl  w-[220px] text-2xl">
           <span className=" flex justify-center items-center overflow-hidden">

@@ -1,14 +1,22 @@
 import "./index.css";
 import React, { useEffect, useState } from "react";
-import TodoItem from "./TodoItem";
-import FilterTodos from "./FilterTodos";
-import { deleteTodo, submitTodo, filterTodo } from "./logic";
+import TodoItem from "./components/TodoItem/TodoItem";
+import FilterTodos from "./components/FilterButton/FilterTodos";
+import {
+  deleteTodo,
+  submitTodo,
+  filterTodo,
+  fetchFilterIndex,
+} from "../public/logic";
+import InputBoxAndSubmitButton from "./components/InputBoxAndSubmitButton/InputBoxAndSubmitButton";
 
 const App = () => {
   const [todoText, setTodoText] = useState([]);
-  const [todoTextLength] = useState(todoText.length);
   const [inputBoxValue, setInputBoxValue] = useState("");
-  const [inputCheckBox, setInputCheckBox] = useState([]);
+  const [todoTextLength] = useState(todoText.length);
+
+
+  const [inputCheckBox, setInputCheckBox] = useState(false);
 
   function inputChangeHandle(event) {
     setInputBoxValue(event.target.value);
@@ -23,33 +31,24 @@ const App = () => {
     <div className="bg-blue-950 text-white h-screen w-screen flex flex-col justify-center items-center suse-mono">
       <h1 className="text-6xl p-1 m-8">Todo List</h1>
 
-      <form className="flex">
-        <input
-          type="text"
-          placeholder={"Enter A Todo"}
-          value={inputBoxValue}
-          onChange={(event) => inputChangeHandle(event)}
-          className="text-center border-[1px] rounded-2xl outline-0 m-3 p-2 "
-        />
+      <InputBoxAndSubmitButton
+        inputBoxValue={inputBoxValue}
+        inputChangeHandle={inputChangeHandle}
+        submitTodo={submitTodo}
+        setTodoText={setTodoText}
+        todoText={todoText}
+      />
 
-        <button
-          className="m-3 p-3  border-[1px] rounded-2xl cursor-pointer hover:bg-green-800 transition duration-300 delay-75"
-          onClick={(event) =>
-            submitTodo(
-              event,
-              inputChangeHandle,
-              setTodoText,
-              todoText,
-              inputBoxValue
-            )
-          }
-        >
-          Add Todo
-        </button>
-      </form>
+      
 
       {/* FilterTodos */}
-      {todoText.length === 0 ? null : <FilterTodos filterTodo={filterTodo} />}
+      {todoText.length === 0 ? null : (
+        <FilterTodos
+          filterTodo={filterTodo} //function
+          todoText={todoText} //prop
+          setTodoText={setTodoText} //prop
+        />
+      )}
       {/* FilterTodos */}
 
       {/*todo border line*/}
@@ -71,6 +70,7 @@ const App = () => {
                   todoText={todoText}
                   setTodoText={setTodoText}
                   filterTodo={filterTodo}
+                  fetchFilterIndex={fetchFilterIndex}
                 />
               )
             )}

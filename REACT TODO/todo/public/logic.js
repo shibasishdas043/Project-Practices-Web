@@ -18,6 +18,14 @@ export function deleteTodo(todoListindex, todoText, setTodoText) {
   setTodoText(leftTodos);
 }
 
-export function filterTodo() {
-    
+export function fetchFilterIndex(todoListindex) {
+  // let value = todoListindex;
+  // return todoListindex;
+}
+
+export function filterTodo(todoText, setTodoText, todoListindex) {
+  // const itemToDelete = todoListindex;
+  // console.log(todoListindex);
+  // const filteredTodos = todoText.filter((todo, index) => index !== todoListindex);
+  // setTodoText(filteredTodos);
 }
