@@ -1,10 +1,11 @@
 import "./index.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const App = () => {
   const [todoText, setTodoText] = useState([]);
+  const [todoTextLength] = useState(todoText.length);
   const [inputValue, setInputValue] = useState("");
-
+  
   function inputChangeHandle(event) {
     setInputValue(event.target.value);
     console.log(inputValue);
@@ -14,17 +15,24 @@ const App = () => {
     inputChangeHandle(event);
     setTodoText([...todoText, inputValue]);
     console.log(todoText);
-    // if (todoText.includes(value) === "") {
-
-    // }
   }
 
+  useEffect(() => {
+    console.log("todo length : ",todoTextLength);
+  }, [todoTextLength]);
 
+  function deleteTodo(todoListindex) {
+    console.log("todo delete value : ", todoListindex);
+    const leftTodos = todoText.filter((todo, index)=> index != todoListindex);
+    setTodoText(leftTodos);
+  }
 
 
   return (
     <div className="bg-blue-950 text-white h-screen w-screen flex flex-col justify-center items-center suse-mono">
+
       <h1 className="text-6xl p-1 m-8">Todo List</h1>
+
       <form className="flex">
         <input
           type="text"
@@ -33,6 +41,7 @@ const App = () => {
           onChange={(event) => inputChangeHandle(event)}
           className="text-center border-[1px] rounded-2xl outline-0 m-3 p-2 "
         />
+
         <button
           className="m-3 p-3  border-[1px] rounded-2xl cursor-pointer hover:bg-green-800 transition duration-300 delay-75"
           onClick={(event) => submitTodo(event)}
@@ -41,23 +50,27 @@ const App = () => {
         </button>
       </form>
 
+      
+      {/*todo border line*/}
       {todoText.length === 0 ? (
         <></>
       ) : (
         <div className="bg-white border-[1px] w-[350px] m-1"> </div>
       )}
+      {/*todo border line */}
 
+      
       {todoText.length === 0 ? null : (
+
         <div className="border-[1px] p-2 m-2 rounded-2xl ">
           <ul className="flex flex-col">
-            {todoText.map((todo, index) =>
+            {todoText.map((todo, todoListindex) =>
               todo.length === 0 ? null : (
                 <li
-                  key={index}
+                  key={todoListindex}
                   className="flex flex-row justify-center items-center"
                 >
                   <input
-                    key={index}
                     type="checkbox"
                     className="rounded-2xl border-0 outline-0"
                   />
@@ -67,6 +80,7 @@ const App = () => {
                     </span>
                   </div>
                   <button
+                    onClick={()=>deleteTodo(todoListindex)}
                     className="border-[1px] h-12 rounded-2xl p-2 hover:bg-red-800 cursor-pointer transition duration-300 delay-75"
                     
                   >
